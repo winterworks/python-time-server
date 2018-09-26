@@ -1,10 +1,14 @@
 # example source: https://wiki.python.org/moin/TcpCommunication
 
 import socket
+import time
 
 TCP_IP = '127.0.0.1'
 TCP_PORT = 5006
 BUFFER_SIZE = 20
+
+curTime = time.time()
+print (curTime)
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((TCP_IP, TCP_PORT))
