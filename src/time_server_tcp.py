@@ -4,7 +4,7 @@ from our_time import get_time_in_bin
 import socket
 
 TCP_IP = '127.0.0.1'
-TCP_PORT = 5006
+TCP_PORT = 37
 BUFFER_SIZE = 20
 
 

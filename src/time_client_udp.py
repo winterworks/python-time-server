@@ -4,9 +4,9 @@ import socket
 from struct import unpack
 
 UDP_IP = '127.0.0.1'
-UDP_PORT = 5005
+UDP_PORT = 37
 BUFFER_SIZE = 1024
-MESSAGE = "Hello, World!"
+MESSAGE = ""
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.sendto(MESSAGE, (UDP_IP, UDP_PORT))
