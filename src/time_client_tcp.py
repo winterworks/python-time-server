@@ -16,7 +16,7 @@ s.close()
 
 time = unpack("!L", data)
 time = time[0]
-print"received data: " +  str(time)
+print("received data: " +  str(time))
 
 print_time(time)
 

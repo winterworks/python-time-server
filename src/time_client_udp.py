@@ -15,6 +15,6 @@ data = s.recvfrom(BUFFER_SIZE)
 
 time = unpack("!L", data[0])
 time = time[0]
-print"received data: " +  str(time)
+print("received data: " +  str(time))
 
 print_time(time)
