@@ -2,6 +2,7 @@
 
 import socket
 from struct import unpack
+from print_time import print_time
 
 UDP_IP = '127.0.0.1'
 UDP_PORT = 37
@@ -12,5 +13,8 @@ s.sendto(bytes(), (UDP_IP, UDP_PORT))
 
 data = s.recvfrom(BUFFER_SIZE)
 
-print("received data:", unpack("!L", data[0]))
+time = unpack("!L", data[0])
+time = time[0]
+print"received data: " +  str(time)
 
+print_time(time)
