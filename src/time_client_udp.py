@@ -12,5 +12,5 @@ s.sendto(bytes(), (UDP_IP, UDP_PORT))
 
 data = s.recvfrom(BUFFER_SIZE)
 
-# print("received data:", unpack("!L", data))
-print("received data:", data)
+print("received data:", unpack("!L", data[0]))
+
