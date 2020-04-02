@@ -3,18 +3,25 @@
 import socket
 from struct import unpack
 from print_time import print_time
+from common import getargs
+import sys
 
-UDP_IP = '127.0.0.1'
-UDP_PORT = 37
-BUFFER_SIZE = 1024
 
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.sendto(bytes(), (UDP_IP, UDP_PORT))
+def main(argv):
+    udp_ip, udp_port = getargs(argv)
+    buffer_size = 1024
 
-data = s.recvfrom(BUFFER_SIZE)
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.sendto(bytes(), (udp_ip, udp_port))
 
-time = unpack("!L", data[0])
-time = time[0]
-print("received data: " +  str(time))
+    data = s.recvfrom(buffer_size)
 
-print_time(time)
+    time = unpack("!L", data[0])
+    time = time[0]
+    print("received data: " + str(time))
+
+    print_time(time)
+
+
+if __name__ == '__main__':
+    main(sys.argv)
